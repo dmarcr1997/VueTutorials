@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>A First App</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div>
+        <label for="goal">Goal</label>
+        <input type="text" id="goal" v-model="enteredValue"/>
+        <button @click="addToGoals">Add Goal</button>
+      </div>
+      <ul>
+        <div v-if="goals.length > 0">
+          <li v-for="goal in goals">{{ goal }}</li>
+        </div>
+        <div v-else>
+          No Goals Yet Make Some!
+        </div>
+      </ul>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="app.js"></script>
+   
+  </body>
+</html>
